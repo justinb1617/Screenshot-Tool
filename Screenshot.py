@@ -5,8 +5,6 @@ import pyperclip
 import base64
 import requests
 import json
-import time
-from pynput.keyboard import Key, Listener
 
 root= tk.Tk()
 
@@ -37,7 +35,7 @@ def takeScreen ():
 
     print(f"Your Screenshot: {post.json()['data']['url_viewer']}")
 
-myButton = tk.Button(text='Screenshot', command=takeScreen, bg='blue',fg='white',font= 10)
-canvas1.create_window(150, 150 , window=myButton)
+button = tk.Button(text='Screenshot', command=takeScreen, bg='blue',fg='white',font= 10)
+canvas1.create_window(150, 150 , window=button)
 
 root.mainloop()
