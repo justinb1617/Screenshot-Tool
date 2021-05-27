@@ -35,7 +35,7 @@ def takeScreen ():
 
     print(f"Your Screenshot: {post.json()['data']['url_viewer']}")
 
-button = tk.Button(text='Screenshot', command=takeScreen, bg='blue',fg='white',font= 10)
+button = tk.Button(text='Screenshot', command=takeScreen, bg='black',fg='red',font= 10)
 canvas1.create_window(150, 150 , window=button)
 
 def close_programm():
