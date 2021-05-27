@@ -38,4 +38,11 @@ def takeScreen ():
 button = tk.Button(text='Screenshot', command=takeScreen, bg='blue',fg='white',font= 10)
 canvas1.create_window(150, 150 , window=button)
 
+def close_programm():
+    root.destroy()
+
+close = tk.Button(text="Quit Programm", command=close_programm, bg="black", fg="red", font=10)
+canvas1.create_window(150, 200, window=close)
+
+
 root.mainloop()
