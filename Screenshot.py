@@ -18,7 +18,7 @@ def takeScreen ():
     scr = pyautogui.screenshot()
     file_path = filedialog.asksaveasfilename(defaultextension='.png')
     scr.save(file_path)
-    print(f"Screenshot wurde in {file_path} gespeichert!")
+    print(f"Screenshot was saved in {file_path} !")
 
     config = json.load(open("config.json"))
 
