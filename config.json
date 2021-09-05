@@ -1,4 +1,5 @@
 {
     "api_token": "Your api token here",
-    "link_expire": 300
+    "link_expire": 300.
+    "screenshot_path": "your screenshot temp path"
 }
