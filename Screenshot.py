@@ -1,10 +1,9 @@
 import pyautogui
 import tkinter as tk
-from tkinter import Label, filedialog
-import pyperclip
 import base64
 import requests
 import json
+import os
 
 root= tk.Tk()
 
@@ -16,9 +15,9 @@ root.title("Screenshot")
 def takeScreen ():
     
     scr = pyautogui.screenshot()
-    file_path = filedialog.asksaveasfilename(defaultextension='.png')
+    config = json.load(open("config.json"))
+    file_path = config["screenshot_path"] + "temp-screen.png"
     scr.save(file_path)
-    print(f"Screenshot was saved in {file_path} !")
 
     config = json.load(open("config.json"))
 
@@ -31,9 +30,13 @@ def takeScreen ():
         }
     post = requests.post(url, payload)
 
-    print(post.json()['status'])
+    if post.json()["status"] == 200:
 
-    print(f"Your Screenshot: {post.json()['data']['url_viewer']}")
+        print ("Image was uploaded.")
+
+    print(f" Link:  {post.json()['data']['url_viewer']}")
+
+    os.remove(file_path)
 
 button = tk.Button(text='Screenshot', command=takeScreen, bg='black',fg='red',font= 10)
 canvas1.create_window(150, 150 , window=button)
@@ -43,6 +46,5 @@ def close_programm():
 
 close = tk.Button(text="Quit Programm", command=close_programm, bg="black", fg="red", font=10)
 canvas1.create_window(150, 200, window=close)
-
 
 root.mainloop()
