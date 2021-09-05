@@ -9,6 +9,13 @@ Enter the api token in the config.json and (optional) edit the link expire ( Ent
 
 You have an issue? Open an issue or write me on Discord: WOG / MadeAsDev#6547
 
-# Error handling
+# Modules
 
-Over the link that is posted in console if you take a screenshot, if there is a int but not 200, pls view you api token if it is correct.
+Required Modules: ( install with ```pip install [Module]```)
+
+ pyautogui
+ tkinter as tk
+ base64
+ requests
+ json
+ os
